@@ -1,0 +1,20 @@
+#include "pt4.h"
+#include <math.h>
+using namespace std;
+
+void summ(int n, double x, double& s) {
+    int dwa;
+    dwa = pow(2, n - 1);
+    s = s + pow(x, dwa);
+    if (n > 1) summ(n - 1, x, s);
+}
+
+void Solve()
+{
+    Task("Reccur15");
+    int n = 0;
+    double x = 0.0, s = 0.0;
+    pt >> n >> x;
+    summ(n, x, s);
+    pt << s;
+}
